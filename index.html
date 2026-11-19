@@ -1,0 +1,1743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Module 1: Quantitative Analysis Fundamentals</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="top-nav">
+    <div class="nav-left">
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation Menu">☰</button>
+      <div class="brand-wrap">
+        <span class="brand-badge">Module 1</span>
+        <span class="brand-title">Quantitative Analysis Fundamentals</span>
+      </div>
+    </div>
+    <div class="nav-right">
+      <a href="slides.html" class="btn-print" style="text-decoration: none; background-color: var(--primary-light); color: var(--primary); border-color: var(--primary-border); font-weight: 600;" title="Open PowerPoint Presentation View">
+        <span>📽️</span> Presentation Slides
+      </a>
+      <button class="btn-print" id="btnPrint" title="Print or save as PDF">
+        <span>🖨️</span> Print Lesson
+      </button>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle Dark/Light Mode">
+        <span id="themeIcon">🌙</span>
+        <span id="themeText">Dark</span>
+      </button>
+    </div>
+    <div class="reading-progress-container">
+      <div class="reading-progress-bar" id="readingProgress"></div>
+    </div>
+  </header>
+
+  <!-- Mobile Backdrop -->
+  <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+  <div class="app-layout">
+    <!-- Sidebar Table of Contents -->
+    <aside class="app-sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <span>Table of Contents</span>
+        <span style="font-size: 0.75rem; color: var(--primary);">16 Parts</span>
+      </div>
+      <nav>
+        <ul class="toc-list">
+          <li><a href="#overview" class="toc-link"><span class="toc-num">00</span> Overview</a></li>
+          <li><a href="#part1" class="toc-link"><span class="toc-num">01</span> Understanding QA</a></li>
+          <li><a href="#part2" class="toc-link"><span class="toc-num">02</span> Decision-Making Models</a></li>
+          <li><a href="#part3" class="toc-link"><span class="toc-num">03</span> Certainty, Risk & Uncertainty</a></li>
+          <li><a href="#part4" class="toc-link"><span class="toc-num">04</span> Deterministic Approaches</a></li>
+          <li><a href="#part5" class="toc-link"><span class="toc-num">05</span> Probabilistic Approaches</a></li>
+          <li><a href="#part6" class="toc-link"><span class="toc-num">06</span> Expected Monetary Value (EMV)</a></li>
+          <li><a href="#part7" class="toc-link"><span class="toc-num">07</span> Probability Distributions</a></li>
+          <li><a href="#part8" class="toc-link"><span class="toc-num">08</span> Deterministic vs. Probabilistic</a></li>
+          <li><a href="#part9" class="toc-link"><span class="toc-num">09</span> Problem-Solving Frameworks</a></li>
+          <li><a href="#part10" class="toc-link"><span class="toc-num">10</span> Weighted Scoring Method</a></li>
+          <li><a href="#part11" class="toc-link"><span class="toc-num">11</span> Guided Practice</a></li>
+          <li><a href="#part12" class="toc-link"><span class="toc-num">12</span> Classroom Activity</a></li>
+          <li><a href="#part13" class="toc-link"><span class="toc-num">13</span> Individual Assessment</a></li>
+          <li><a href="#part14" class="toc-link"><span class="toc-num">14</span> Answer Key</a></li>
+          <li><a href="#part15" class="toc-link"><span class="toc-num">15</span> Assignment & Rubric</a></li>
+          <li><a href="#part16" class="toc-link"><span class="toc-num">16</span> Final Lesson Summary</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-wrapper">
+      <div class="main-content">
+
+        <!-- Course Header / Hero -->
+        <header class="lesson-hero" id="overview">
+          <span class="section-badge">Academic Curriculum</span>
+          <h1>MODULE 1: QUANTITATIVE ANALYSIS FUNDAMENTALS</h1>
+          <p style="font-size: 1.1rem; color: var(--text-muted); margin-top: 0.5rem;">
+            A foundational guide to making sound, data-driven decisions using mathematical logic, deterministic calculations, and probabilistic reasoning.
+          </p>
+
+          <div style="display: flex; gap: 0.75rem; align-items: center; margin-top: 1rem; flex-wrap: wrap;">
+            <a href="slides.html" class="btn-primary" style="text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.6rem 1.15rem; font-size: 0.95rem;" title="Open interactive slide presentation">
+              <span>📽️</span> Launch PowerPoint Slides View
+            </a>
+            <span style="font-size: 0.85rem; color: var(--text-muted);">Interactive 47-slide deck designed for lectures, projector display, and revision.</span>
+          </div>
+
+          <div class="hero-meta-grid">
+            <div class="meta-item">
+              <span class="meta-label">Suggested Duration</span>
+              <span class="meta-val">4 Hours</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Teaching Method</span>
+              <span class="meta-val">Discussion, demonstration, guided calculations, problem-solving activities</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Target Audience</span>
+              <span class="meta-val">College & Undergraduate Students</span>
+            </div>
+          </div>
+
+          <div style="margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid var(--border-color);">
+            <strong style="display:block; margin-bottom: 0.5rem; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted);">Key Module Topics:</strong>
+            <ol style="margin-bottom: 0; padding-left: 1.2rem; font-size: 0.95rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.35rem;">
+              <li>Introduction to Quantitative Analysis</li>
+              <li>Decision-Making Models</li>
+              <li>Decision Conditions: Certainty, Risk, & Uncertainty</li>
+              <li>Deterministic Approaches</li>
+              <li>Probabilistic Approaches</li>
+              <li>Problem-Solving Frameworks & Scoring</li>
+            </ol>
+          </div>
+        </header>
+
+        <!-- PART 1 -->
+        <section class="section-card" id="part1">
+          <span class="section-badge">Part 1</span>
+          <h2>UNDERSTANDING QUANTITATIVE ANALYSIS</h2>
+
+          <h3>1.1 What is Quantitative Analysis?</h3>
+          <p>Before we discuss complicated formulas, let's understand the meaning of the word.</p>
+          
+          <ul style="list-style-type: '👉 '; padding-left: 1.5rem;">
+            <li>The word <strong>Quantitative</strong> means something that can be measured, counted, or expressed using numbers.</li>
+            <li>The word <strong>Analysis</strong> means examining information carefully to understand something or solve a problem.</li>
+          </ul>
+
+          <div class="callout callout-teacher">
+            <span class="callout-icon">💡</span>
+            <div class="callout-body">
+              <div class="callout-title">Core Definition</div>
+              <p style="margin: 0;"><strong>Quantitative Analysis</strong> is the process of using numbers, data, mathematical calculations, and logical methods to understand problems and make decisions.</p>
+            </div>
+          </div>
+
+          <blockquote>
+            In simple English: <strong>Quantitative Analysis means using numbers to help us make better decisions.</strong>
+          </blockquote>
+
+          <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 2rem 0;">
+
+          <h3>Example 1: Buying a Computer</h3>
+          <p>Imagine you are a student and you want to buy a computer for programming. You have two choices:</p>
+
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Computer</th>
+                  <th class="text-right">Price</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Computer A</td>
+                  <td class="text-right num-highlight">₱25,000</td>
+                </tr>
+                <tr>
+                  <td>Computer B</td>
+                  <td class="text-right num-highlight">₱30,000</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p><strong>Which computer is cheaper?</strong> Of course, Computer A.</p>
+
+          <div class="calculation-box">
+            <div class="calculation-title">Calculation</div>
+            <div class="calc-step">
+              <span class="calc-step-num">•</span>
+              <span>₱30,000 − ₱25,000 = <strong>₱5,000</strong></span>
+            </div>
+            <div class="calc-result">Computer A is ₱5,000 cheaper than Computer B.</div>
+          </div>
+
+          <p><strong>But should you automatically purchase Computer A?</strong> Not necessarily!</p>
+          <p>What if Computer B has better RAM, a faster processor, and more storage? This is where quantitative analysis becomes useful. We do not only compare prices. We also compare specifications and other factors that matter.</p>
+          
+          <p style="font-weight: 600; color: var(--primary);">📌 Lesson: Numbers help us compare available choices before deciding.</p>
+
+          <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 2rem 0;">
+
+          <h3>Example 2: Calculating Students' Average Grades</h3>
+          <p>Imagine that a teacher gives five students an examination. Their scores are:</p>
+
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Student</th>
+                  <th class="text-right">Score</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Student 1</td><td class="text-right num-highlight">80</td></tr>
+                <tr><td>Student 2</td><td class="text-right num-highlight">90</td></tr>
+                <tr><td>Student 3</td><td class="text-right num-highlight">85</td></tr>
+                <tr><td>Student 4</td><td class="text-right num-highlight">75</td></tr>
+                <tr><td>Student 5</td><td class="text-right num-highlight">70</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p>The teacher wants to know the average score of the class.</p>
+
+          <div class="calculation-box">
+            <div class="calculation-title">Step-by-Step Solution</div>
+            <div class="calc-step">
+              <span class="calc-step-num">Step 1:</span>
+              <span>Add all scores: <code>80 + 90 + 85 + 75 + 70 = 400</code></span>
+            </div>
+            <div class="calc-step">
+              <span class="calc-step-num">Step 2:</span>
+              <span>Count the number of students: <strong>5 students</strong></span>
+            </div>
+            <div class="calc-step">
+              <span class="calc-step-num">Step 3:</span>
+              <span>Divide total score by number of students: <code>Average = Total Scores ÷ Number of Students = 400 ÷ 5</code></span>
+            </div>
+            <div class="calc-result">Final Answer: The class average is 80.</div>
+          </div>
+
+          <p><strong>Why did we divide by 5?</strong> Because we want to distribute the total score equally across the five students to determine the average. This is a clear, simple example of quantitative analysis.</p>
+
+          <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 2rem 0;">
+
+          <h3>Example 3: Checking Internet Speed</h3>
+          <p>An IT department wants to know whether its internet connection is sufficient. The laboratory has <strong>40 computers</strong>. Each computer is estimated to need <strong>5 Mbps</strong> of bandwidth during the planned activity.</p>
+
+          <div class="calculation-box">
+            <div class="calculation-title">Bandwidth Calculation</div>
+            <div class="calc-step">
+              <span class="calc-step-num">Step 1:</span>
+              <span>Identify number of computers: <strong>40 computers</strong></span>
+            </div>
+            <div class="calc-step">
+              <span class="calc-step-num">Step 2:</span>
+              <span>Identify estimated bandwidth required per computer: <strong>5 Mbps</strong></span>
+            </div>
+            <div class="calc-step">
+              <span class="calc-step-num">Step 3:</span>
+              <span>Required Bandwidth = Number of Computers × Bandwidth per Computer = <code>40 × 5 Mbps</code></span>
+            </div>
+            <div class="calc-result">Required Bandwidth = 200 Mbps</div>
+          </div>
+
+          <p>Suppose the school only has <strong>100 Mbps</strong>.</p>
+          <ul style="list-style-type: square; padding-left: 1.5rem;">
+            <li>Required bandwidth = <strong>200 Mbps</strong></li>
+            <li>Available bandwidth = <strong>100 Mbps</strong></li>
+            <li>Difference: <code>200 − 100 = 100 Mbps</code></li>
+          </ul>
+
+          <div class="callout callout-warning">
+            <span class="callout-icon">⚠️</span>
+            <div class="callout-body">
+              <strong>Network Deficit Detected:</strong> The estimated requirement is 100 Mbps greater than available capacity. The school may need to investigate its network usage and consider an upgrade.<br>
+              <em>Remember:</em> This is an estimate. Actual bandwidth requirements depend on what students are doing online and how many use bandwidth simultaneously.
+            </div>
+          </div>
+
+          <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 2rem 0;">
+
+          <h3>When Do We Use Quantitative Analysis?</h3>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Practical Situation</th>
+                  <th>What We Calculate</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Buying a laptop</td><td>Price and specifications</td></tr>
+                <tr><td>Computing grades</td><td>Average score</td></tr>
+                <tr><td>Managing a business</td><td>Revenue and expenses</td></tr>
+                <tr><td>Planning a computer lab</td><td>Equipment costs</td></tr>
+                <tr><td>Managing an internet connection</td><td>Bandwidth requirements</td></tr>
+                <tr><td>Computer maintenance</td><td>Repair expenses</td></tr>
+                <tr><td>School budgeting</td><td>Total budget and remaining balance</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="callout callout-tip">
+            <span class="callout-icon">💬</span>
+            <div class="callout-body">
+              <div class="callout-title">Quick Student Question</div>
+              <p><em>"If you have ₱1,000 and you want to buy three notebooks worth ₱250 each, how much money will you spend, and how much will remain?"</em></p>
+              
+              <details class="solution-accordion" style="margin-top: 0.5rem;">
+                <summary>Click to view solution</summary>
+                <div class="solution-content">
+                  <p><strong>Total Expense:</strong> <code>3 × ₱250 = ₱750</code></p>
+                  <p><strong>Remaining Money:</strong> <code>₱1,000 − ₱750 = ₱250</code></p>
+                  <p style="margin-bottom: 0; color: var(--text-muted);"><strong>Explanation:</strong> We used multiplication to calculate expenses and subtraction to determine remaining money. Even everyday shopping decisions rely on quantitative analysis.</p>
+                </div>
+              </details>
+            </div>
+          </div>
+        </section>
+
+        <!-- PART 2 -->
+        <section class="section-card" id="part2">
+          <span class="section-badge">Part 2</span>
+          <h2>DECISION-MAKING MODELS</h2>
+
+          <h3>2.1 What is Decision-Making?</h3>
+          <p>Decision-making means choosing one option from several available choices. For example:</p>
+          <ul style="list-style-type: disc; padding-left: 1.5rem;">
+            <li>Which laptop should I purchase?</li>
+            <li>Which internet provider should our school use?</li>
+            <li>Which software is better?</li>
+            <li>How many computers should we buy?</li>
+            <li>Which project should our organization prioritize?</li>
+          </ul>
+          <p>Every time we choose between alternatives, we are making a decision. However, some decisions involve money, time, resources, and possible risks. That is why we need a systematic way of choosing.</p>
+
+          <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 2rem 0;">
+
+          <h3>2.2 What is a Decision-Making Model?</h3>
+          <p>A <strong>Decision-Making Model</strong> is a simplified representation of a real-world problem that helps us compare options and choose an appropriate solution.</p>
+          <blockquote>
+            In simple terms: <strong>It is a guide that helps us decide what to do by organizing important information.</strong>
+          </blockquote>
+
+          <h4>Example: Choosing an Internet Plan</h4>
+          <p>Imagine that the school needs an internet subscription with two choices:</p>
+
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Information</th>
+                  <th class="text-right">Plan A</th>
+                  <th class="text-right">Plan B</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Monthly Fee</td><td class="text-right num-highlight">₱1,500</td><td class="text-right num-highlight">₱2,000</td></tr>
+                <tr><td>Speed</td><td class="text-right">100 Mbps</td><td class="text-right">200 Mbps</td></tr>
+                <tr><td>Contract</td><td class="text-right">12 months</td><td class="text-right">12 months</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="calculation-box">
+            <div class="calculation-title">Annual Cost Comparison</div>
+            <div class="calc-step">
+              <span class="calc-step-num">Plan A:</span>
+              <span><code>₱1,500 × 12 = ₱18,000 per year</code></span>
+            </div>
+            <div class="calc-step">
+              <span class="calc-step-num">Plan B:</span>
+              <span><code>₱2,000 × 12 = ₱24,000 per year</code></span>
+            </div>
+            <div class="calc-step">
+              <span class="calc-step-num">Diff:</span>
+              <span><code>₱24,000 − ₱18,000 = ₱6,000 savings with Plan A</code></span>
+            </div>
+            <div class="calc-result">Trade-off: Plan A saves ₱6,000 annually, but Plan B provides 2× the advertised speed.</div>
+          </div>
+          <p>Now the school must decide whether the extra 100 Mbps is worth the additional ₱6,000 per year. That is the exact purpose of a decision-making model: it makes trade-offs transparent.</p>
+
+          <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 2rem 0;">
+
+          <h3>2.3 Four Basic Components of a Decision-Making Model</h3>
+          <p>There are four foundational components every student must master:</p>
+
+          <div style="display: grid; gap: 1.25rem; margin-top: 1rem;">
+            <!-- Component A -->
+            <div style="background-color: var(--bg-subtle); border-left: 4px solid var(--primary); padding: 1.15rem; border-radius: 0 var(--radius-md) var(--radius-md) 0;">
+              <h4 style="margin-top: 0; color: var(--primary);">A. Decision Variables</h4>
+              <p>A decision variable represents something that the decision-maker can <strong>control or choose</strong>.</p>
+              <p><em>Examples:</em> Number of computers to purchase, number of employees to hire, products to manufacture, hours allocated to a project.</p>
+              <div class="calculation-box" style="margin-bottom: 0;">
+                <div class="calculation-title">Worked Example</div>
+                <p style="margin: 0;">Let <code>x</code> = Number of computers to purchase.<br>
+                Here, <code>x</code> is the decision variable because the school chooses the value: if they choose 10, <code>x = 10</code>; if 15, <code>x = 15</code>.</p>
+              </div>
+            </div>
+
+            <!-- Component B -->
+            <div style="background-color: var(--bg-subtle); border-left: 4px solid var(--accent); padding: 1.15rem; border-radius: 0 var(--radius-md) var(--radius-md) 0;">
+              <h4 style="margin-top: 0; color: var(--accent);">B. Parameters</h4>
+              <p>Parameters are <strong>known, given, or estimated values</strong> used in the calculation that the decision-maker does not immediately alter.</p>
+              <p><em>Examples:</em> Price of a computer, monthly electricity rate, internet subscription fee, given budget ceiling.</p>
+              <div class="calculation-box" style="margin-bottom: 0;">
+                <div class="calculation-title">Worked Example</div>
+                <p style="margin: 0;">One computer costs ₱25,000 (parameter <code>c</code>). If the school decides to buy 10 computers (<code>x = 10</code>):<br>
+                <code>Total Cost = x × c = 10 × ₱25,000 = ₱250,000</code></p>
+              </div>
+            </div>
+
+            <!-- Component C -->
+            <div style="background-color: var(--bg-subtle); border-left: 4px solid #d97706; padding: 1.15rem; border-radius: 0 var(--radius-md) var(--radius-md) 0;">
+              <h4 style="margin-top: 0; color: #d97706;">C. Constraints</h4>
+              <p>Constraints are <strong>limitations or restrictions</strong> that the solution must obey.</p>
+              <p><em>Examples:</em> Limited budget, limited classroom space, limited working hours, hardware maximums.</p>
+              <div class="calculation-box" style="margin-bottom: 0;">
+                <div class="calculation-title">Worked Example</div>
+                <p>Budget = ₱300,000; Price per computer = ₱25,000.<br>
+                <code>Maximum Computers = Budget ÷ Price = ₱300,000 ÷ ₱25,000 = 12 computers</code></p>
+                <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Purchasing 13 computers costs <code>13 × ₱25,000 = ₱325,000</code> (exceeds budget by ₱25,000). Hence, the budget is our constraint.</p>
+              </div>
+            </div>
+
+            <!-- Component D -->
+            <div style="background-color: var(--bg-subtle); border-left: 4px solid #16a34a; padding: 1.15rem; border-radius: 0 var(--radius-md) var(--radius-md) 0;">
+              <h4 style="margin-top: 0; color: #16a34a;">D. Objective Function</h4>
+              <p>An objective function describes <strong>what we want to achieve</strong> (minimize cost or maximize gain).</p>
+              <p><em>Examples:</em> Minimize expenses, maximize profit, maximize productivity, minimize waiting time.</p>
+              <div class="calculation-box" style="margin-bottom: 0;">
+                <div class="calculation-title">Worked Example</div>
+                <p style="margin: 0;">Objective: <strong>Maximize the number of computers (x)</strong><br>
+                Subject to constraint: <code>25,000x ≤ 300,000 → x ≤ 12</code>.</p>
+              </div>
+            </div>
+          </div>
+
+          <h4 style="margin-top: 2rem;">Summary of the Four Components</h4>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Component</th>
+                  <th>Easy Meaning</th>
+                  <th>Practical Example</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Decision Variable</strong></td>
+                  <td>What we choose / control</td>
+                  <td>Number of computers to purchase</td>
+                </tr>
+                <tr>
+                  <td><strong>Parameter</strong></td>
+                  <td>Information already given</td>
+                  <td>Price per computer (₱25,000)</td>
+                </tr>
+                <tr>
+                  <td><strong>Constraint</strong></td>
+                  <td>Our limitation / ceiling</td>
+                  <td>Available budget (₱300,000)</td>
+                </tr>
+                <tr>
+                  <td><strong>Objective Function</strong></td>
+                  <td>What we want to achieve</td>
+                  <td>Buy as many computers as possible</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="callout callout-tip">
+            <span class="callout-icon">✏️</span>
+            <div class="callout-body">
+              <div class="callout-title">Check Your Understanding</div>
+              <p>A company has ₱100,000 to purchase monitors. Each monitor costs ₱5,000.</p>
+              <ol style="margin-bottom: 0.5rem;">
+                <li>What is the decision variable?</li>
+                <li>What is the parameter?</li>
+                <li>What is the constraint?</li>
+                <li>What is the maximum number of monitors that can be purchased?</li>
+              </ol>
+              <details class="solution-accordion">
+                <summary>Click to view solution</summary>
+                <div class="solution-content">
+                  <ol>
+                    <li><strong>Decision Variable:</strong> Number of monitors to purchase.</li>
+                    <li><strong>Parameter:</strong> ₱5,000 per monitor.</li>
+                    <li><strong>Constraint:</strong> ₱100,000 total budget.</li>
+                    <li><strong>Maximum Monitors:</strong> <code>₱100,000 ÷ ₱5,000 = 20 monitors</code>.</li>
+                  </ol>
+                </div>
+              </details>
+            </div>
+          </div>
+        </section>
+
+        <!-- PART 3 -->
+        <section class="section-card" id="part3">
+          <span class="section-badge">Part 3</span>
+          <h2>DECISION-MAKING UNDER CERTAINTY, RISK, AND UNCERTAINTY</h2>
+          <p>These conditions describe how much reliable information we have regarding future outcomes.</p>
+
+          <h3>3.1 Decision-Making Under Certainty</h3>
+          <p><strong>Certainty</strong> means the relevant outcome is known with 100% confidence.</p>
+          <div class="calculation-box">
+            <div class="calculation-title">Example: Keyboards Purchase</div>
+            <p>You purchase 5 keyboards at ₱500 each.</p>
+            <p style="margin: 0;"><code>5 × ₱500 = ₱2,500</code>. There is no guessing or probability involved—both quantity and price are fixed and known.</p>
+          </div>
+
+          <h3>3.2 Decision-Making Under Risk</h3>
+          <p><strong>Risk</strong> means we know the possible outcomes and can assign reliable probabilities to them based on historical records or statistical evidence.</p>
+          <div class="calculation-box">
+            <div class="calculation-title">Example: Product Demand</div>
+            <p>A computer shop estimates two demand situations for keyboards:</p>
+            <ul style="margin-bottom: 0;">
+              <li>High demand: <strong>70% probability</strong></li>
+              <li>Low demand: <strong>30% probability</strong></li>
+            </ul>
+            <p style="margin-top: 0.5rem; margin-bottom: 0; font-size: 0.9rem; color: var(--text-muted);">We know the possible situations and their odds, but we do not know which specific outcome will actually occur.</p>
+          </div>
+
+          <h3>3.3 Decision-Making Under Uncertainty</h3>
+          <p><strong>Uncertainty</strong> means we do not have enough historical or reliable data to assign objective probabilities to possible outcomes.</p>
+          <div class="calculation-box">
+            <div class="calculation-title">Example: Brand New Software Launch</div>
+            <p>A company launches an innovative new software product with zero historical sales data. While they anticipate high, medium, or low demand, they cannot reliably state that high demand has a 70% chance.</p>
+          </div>
+
+          <h3>Comparison Matrix</h3>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Condition</th>
+                  <th>Explanation</th>
+                  <th>Real-World Example</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Certainty</strong></td>
+                  <td>Outcome is known and deterministic</td>
+                  <td>Fixed computer purchase cost under signed contract</td>
+                </tr>
+                <tr>
+                  <td><strong>Risk</strong></td>
+                  <td>Possible outcomes & probabilities are known</td>
+                  <td>Estimated product demand based on last year's sales</td>
+                </tr>
+                <tr>
+                  <td><strong>Uncertainty</strong></td>
+                  <td>Probabilities cannot be reliably determined</td>
+                  <td>Launching a revolutionary tech product with no prior history</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="callout callout-teacher">
+            <span class="callout-icon">👨‍🏫</span>
+            <div class="callout-body">
+              <strong>Teacher Explanation:</strong><br>
+              <em>"Remember: Certainty means we know the outcome. Risk means we have possible outcomes and probabilities. Uncertainty means we do not have enough information to calculate reliable probabilities."</em>
+            </div>
+          </div>
+        </section>
+
+        <!-- PART 4 -->
+        <section class="section-card" id="part4">
+          <span class="section-badge">Part 4</span>
+          <h2>DETERMINISTIC APPROACHES</h2>
+
+          <h3>4.1 What is a Deterministic Approach?</h3>
+          <p>A deterministic approach is a method of solving problems where the inputs are treated as known and fixed.</p>
+          <blockquote>
+            In simple English: <strong>We already know the values, so we use them to calculate the exact answer.</strong>
+          </blockquote>
+          <p>For identical inputs and assumptions, a deterministic model will always produce the identical output.</p>
+
+          <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 2rem 0;">
+
+          <h3>4.2 Example 1: Calculating Total Expenses</h3>
+          <p>A school wants to purchase equipment as shown below:</p>
+
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Equipment</th>
+                  <th class="text-right">Quantity</th>
+                  <th class="text-right">Price per Unit</th>
+                  <th class="text-right">Subtotal</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Keyboard</td>
+                  <td class="text-right">20</td>
+                  <td class="text-right">₱400</td>
+                  <td class="text-right num-highlight">₱8,000</td>
+                </tr>
+                <tr>
+                  <td>Mouse</td>
+                  <td class="text-right">20</td>
+                  <td class="text-right">₱250</td>
+                  <td class="text-right num-highlight">₱5,000</td>
+                </tr>
+                <tr>
+                  <td>Monitor</td>
+                  <td class="text-right">10</td>
+                  <td class="text-right">₱5,000</td>
+                  <td class="text-right num-highlight">₱50,000</td>
+                </tr>
+                <tr style="background-color: var(--bg-subtle); font-weight: 700;">
+                  <td colspan="3">Total Equipment Expense</td>
+                  <td class="text-right num-highlight" style="color: var(--primary);">₱63,000</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p><strong>Step-by-step breakdown:</strong> <code>₱8,000 + ₱5,000 + ₱50,000 = ₱63,000</code>.</p>
+
+          <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 2rem 0;">
+
+          <h3>4.3 Example 2: Calculating Profit</h3>
+          <p>You sell 20 keyboards at a selling price of <strong>₱800</strong> each. The cost of purchasing each keyboard is <strong>₱500</strong>.</p>
+          
+          <div class="formula-block">
+            Profit = Total Revenue − Total Cost
+          </div>
+
+          <div class="calculation-box">
+            <div class="calculation-title">Method 1: Total Revenue Minus Total Cost</div>
+            <div class="calc-step"><span class="calc-step-num">Step 1:</span> <span>Revenue = <code>₱800 × 20 = ₱16,000</code></span></div>
+            <div class="calc-step"><span class="calc-step-num">Step 2:</span> <span>Total Cost = <code>₱500 × 20 = ₱10,000</code></span></div>
+            <div class="calc-step"><span class="calc-step-num">Step 3:</span> <span>Profit = <code>₱16,000 − ₱10,000</code></span></div>
+            <div class="calc-result">Profit = ₱6,000</div>
+          </div>
+
+          <div class="calculation-box">
+            <div class="calculation-title">Method 2: Profit per Item First</div>
+            <div class="calc-step"><span class="calc-step-num">Step 1:</span> <span>Profit per unit = <code>₱800 − ₱500 = ₱300</code></span></div>
+            <div class="calc-step"><span class="calc-step-num">Step 2:</span> <span>Total profit = <code>₱300 × 20 units</code></span></div>
+            <div class="calc-result">Profit = ₱6,000</div>
+          </div>
+
+          <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 2rem 0;">
+
+          <h3>4.4 Example 3: Calculating Percentage</h3>
+          <p>A class has 40 students. Thirty students passed the exam. What percentage of students passed?</p>
+          <div class="formula-block">
+            Percentage = (Number of Students Passed ÷ Total Students) × 100
+          </div>
+          <div class="calculation-box">
+            <div class="calculation-title">Calculation</div>
+            <p><code>(30 ÷ 40) × 100 = 0.75 × 100 = 75%</code></p>
+            <div class="calc-result">75% of the class passed.</div>
+          </div>
+
+          <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 2rem 0;">
+
+          <h3>4.5 Example 4: Break-Even Analysis</h3>
+          <p>Break-even analysis determines the volume of activity where total revenue exactly equals total costs (Profit = ₱0).</p>
+
+          <div class="formula-block">
+            Break-Even Quantity = Fixed Cost ÷ (Selling Price per Unit − Variable Cost per Unit)
+          </div>
+
+          <div style="background-color: var(--bg-subtle); padding: 1.25rem; border-radius: var(--radius-md); margin-bottom: 1.25rem;">
+            <p><strong>Shop Scenario:</strong></p>
+            <ul style="margin-bottom: 0;">
+              <li><strong>Fixed Cost:</strong> ₱10,000 / month (Rent, base utilities)</li>
+              <li><strong>Service Charge (Price):</strong> ₱700 / customer</li>
+              <li><strong>Variable Cost:</strong> ₱200 / customer (Materials per repair)</li>
+            </ul>
+          </div>
+
+          <div class="calculation-box">
+            <div class="calculation-title">Break-Even Steps</div>
+            <div class="calc-step"><span class="calc-step-num">1:</span> <span>Contribution margin per customer: <code>₱700 − ₱200 = ₱500</code></span></div>
+            <div class="calc-step"><span class="calc-step-num">2:</span> <span>Break-Even Quantity: <code>₱10,000 ÷ ₱500 = 20 customers</code></span></div>
+            <div class="calc-result">Break-Even Point = 20 Customers</div>
+          </div>
+
+          <div class="calculation-box">
+            <div class="calculation-title">Verification at 20 Customers</div>
+            <p>Revenue: <code>20 × ₱700 = ₱14,000</code><br>
+            Variable Cost: <code>20 × ₱200 = ₱4,000</code><br>
+            Fixed Cost: <code>₱10,000</code><br>
+            Total Cost: <code>₱10,000 + ₱4,000 = ₱14,000</code><br>
+            Profit: <code>₱14,000 − ₱14,000 = ₱0</code> (Break-Even achieved!)</p>
+          </div>
+
+          <p><strong>What happens beyond break-even?</strong> If the shop serves 25 customers:<br>
+          Revenue = <code>25 × ₱700 = ₱17,500</code> | Total Cost = <code>₱10,000 + (25 × ₱200) = ₱15,000</code> | <strong>Profit = ₱2,500</strong>.</p>
+
+          <!-- Interactive Break-Even Tool -->
+          <div class="interactive-tool">
+            <div class="tool-header">
+              <span>🧮 Interactive Break-Even Calculator</span>
+            </div>
+            <div class="tool-grid">
+              <div class="input-group">
+                <label for="calcBeFixed">Fixed Cost (₱):</label>
+                <input type="number" id="calcBeFixed" value="10000" step="500">
+              </div>
+              <div class="input-group">
+                <label for="calcBePrice">Price / Charge (₱):</label>
+                <input type="number" id="calcBePrice" value="700" step="50">
+              </div>
+              <div class="input-group">
+                <label for="calcBeVar">Variable Cost (₱):</label>
+                <input type="number" id="calcBeVar" value="200" step="50">
+              </div>
+            </div>
+            <div class="tool-output" id="calcBeOutput">
+              Loading calculator...
+            </div>
+          </div>
+
+          <h4>Advantages & Limitations of Deterministic Approaches</h4>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin-top: 1rem;">
+            <div style="background-color: var(--success-bg); border: 1px solid var(--success-border); padding: 1rem; border-radius: var(--radius-md);">
+              <strong style="color: var(--success-text);">✅ Advantages</strong>
+              <ul style="margin: 0.5rem 0 0 1.2rem; font-size: 0.9rem; color: var(--success-text);">
+                <li>Easier to calculate and understand</li>
+                <li>Ideal when input values are known and fixed</li>
+                <li>Produces consistent, repeatable results</li>
+              </ul>
+            </div>
+            <div style="background-color: #fef2f2; border: 1px solid #fecaca; padding: 1rem; border-radius: var(--radius-md);">
+              <strong style="color: #991b1b;">⚠️ Limitations</strong>
+              <ul style="margin: 0.5rem 0 0 1.2rem; font-size: 0.9rem; color: #991b1b;">
+                <li>Does not explicitly represent uncertain outcomes</li>
+                <li>Unexpected changes alter real-world results</li>
+                <li>Faulty input values produce misleading conclusions</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- PART 5 -->
+        <section class="section-card" id="part5">
+          <span class="section-badge">Part 5</span>
+          <h2>PROBABILISTIC APPROACHES</h2>
+
+          <h3>5.1 What is a Probabilistic Approach?</h3>
+          <p>A probabilistic approach is a method of solving problems that incorporates <strong>probability</strong> to analyze uncertain situations.</p>
+          <blockquote>
+            In simple English: <strong>We do not know exactly what will happen, so we calculate the likelihood of different possible outcomes.</strong>
+          </blockquote>
+
+          <p><strong>Example:</strong> A repair shop estimates daily customer arrivals from historical patterns: 5 customers (20% chance), 10 customers (50% chance), and 15 customers (30% chance).</p>
+
+          <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 2rem 0;">
+
+          <h3>5.2 Understanding Probability</h3>
+          <p>Probability measures how likely an event is to happen. It can be expressed as a decimal (<code>0.50</code>), percentage (<code>50%</code>), or fraction (<code>1/2</code>).</p>
+
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Probability</th>
+                  <th>Qualitative Meaning</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td><strong>0%</strong></td><td>Impossible under given conditions</td></tr>
+                <tr><td><strong>25%</strong></td><td>Low chance / unlikely</td></tr>
+                <tr><td><strong>50%</strong></td><td>Equal chance in a 2-outcome situation</td></tr>
+                <tr><td><strong>75%</strong></td><td>High chance / likely</td></tr>
+                <tr><td><strong>100%</strong></td><td>Certain under given conditions</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 2rem 0;">
+
+          <h3>5.3 Basic Probability Formula</h3>
+          <div class="formula-block">
+            Probability = Number of Favorable Outcomes ÷ Total Number of Equally Likely Outcomes
+          </div>
+
+          <div class="calculation-box">
+            <div class="calculation-title">Example 1: Selecting a Working Computer Cable</div>
+            <p>A box contains 10 cables: <strong>7 working</strong> and <strong>3 defective</strong>.</p>
+            <div class="calc-step"><span class="calc-step-num">Step 1:</span> <span>Favorable outcomes (working) = 7</span></div>
+            <div class="calc-step"><span class="calc-step-num">Step 2:</span> <span>Total outcomes = 10</span></div>
+            <div class="calc-step"><span class="calc-step-num">Step 3:</span> <span><code>7 ÷ 10 = 0.70 = 70%</code></span></div>
+            <div class="calc-result">Probability of selecting a working cable = 70%</div>
+          </div>
+
+          <div class="calculation-box">
+            <div class="calculation-title">Example 2: Selecting a Defective Cable</div>
+            <p>Defective cables = 3 out of 10 total cables.</p>
+            <div class="calc-step"><span class="calc-step-num">•</span> <span><code>3 ÷ 10 = 0.30 = 30%</code></span></div>
+            <div class="calc-result">Probability of selecting a defective cable = 30%</div>
+          </div>
+
+          <p style="font-weight: 600; color: var(--accent);">Verification: <code>70% + 30% = 100%</code> (Covers all exhaustive possible states).</p>
+        </section>
+
+        <!-- PART 6 -->
+        <section class="section-card" id="part6">
+          <span class="section-badge">Part 6</span>
+          <h2>EXPECTED MONETARY VALUE (EMV)</h2>
+
+          <h3>6.1 What is EMV?</h3>
+          <p><strong>Expected Monetary Value (EMV)</strong> is used to compare decisions by calculating the weighted average of their possible monetary outcomes based on probabilities.</p>
+          <blockquote>
+            In simple English: <strong>EMV helps us estimate the average financial payoff of a decision across multiple uncertain outcomes.</strong>
+          </blockquote>
+
+          <div class="formula-block">
+            EMV = (Probability 1 × Value 1) + (Probability 2 × Value 2) + ... + (Probability n × Value n)
+          </div>
+
+          <div class="callout callout-warning">
+            <span class="callout-icon">📌</span>
+            <div class="callout-body">
+              <strong>Crucial Rule:</strong> Always convert percentages to decimals before multiplying (e.g. <code>70% = 0.70</code>, <code>30% = 0.30</code>).
+            </div>
+          </div>
+
+          <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 2rem 0;">
+
+          <h3>6.2 Worked Example 1: Choosing Inventory for a Store</h3>
+          <p>A store owner must decide whether to order a Small or Large Inventory of keyboards.</p>
+
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Inventory Decision</th>
+                  <th class="text-right">High Demand (60% / 0.60)</th>
+                  <th class="text-right">Low Demand (40% / 0.40)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Small Inventory</td>
+                  <td class="text-right num-highlight">₱30,000</td>
+                  <td class="text-right num-highlight">₱25,000</td>
+                </tr>
+                <tr>
+                  <td>Large Inventory</td>
+                  <td class="text-right num-highlight">₱50,000</td>
+                  <td class="text-right num-highlight">₱10,000</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="calculation-box">
+            <div class="calculation-title">EMV Step-by-Step Calculation</div>
+            <div class="calc-step">
+              <span class="calc-step-num">Small:</span>
+              <span><code>(0.60 × ₱30,000) + (0.40 × ₱25,000) = ₱18,000 + ₱10,000 = ₱28,000</code></span>
+            </div>
+            <div class="calc-step">
+              <span class="calc-step-num">Large:</span>
+              <span><code>(0.60 × ₱50,000) + (0.40 × ₱10,000) = ₱30,000 + ₱4,000 = ₱34,000</code></span>
+            </div>
+            <div class="calc-step">
+              <span class="calc-step-num">Diff:</span>
+              <span><code>₱34,000 − ₱28,000 = ₱6,000 in favor of Large Inventory</code></span>
+            </div>
+            <div class="calc-result">Final Recommendation: Large Inventory has the higher EMV by ₱6,000.</div>
+          </div>
+
+          <div class="callout callout-teacher">
+            <span class="callout-icon">💡</span>
+            <div class="callout-body">
+              <strong>Does EMV Guarantee ₱34,000?</strong><br>
+              <strong>No!</strong> The store will either experience high demand (making ₱50,000) or low demand (making ₱10,000). EMV represents the long-run expected average value across repeated trials under these probabilities.
+            </div>
+          </div>
+
+          <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 2rem 0;">
+
+          <h3>6.3 Worked Example 2: Repair Shop Promotional Strategy</h3>
+          <p>Compare two marketing options under High Demand (70% / 0.70) and Low Demand (30% / 0.30):</p>
+
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Strategy Option</th>
+                  <th class="text-right">High Demand Profit</th>
+                  <th class="text-right">Low Demand Profit</th>
+                  <th class="text-right">EMV Calculation</th>
+                  <th class="text-right">Final EMV</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Option A: Basic Promo</strong></td>
+                  <td class="text-right">₱20,000</td>
+                  <td class="text-right">₱8,000</td>
+                  <td class="text-right"><code>(0.70 × 20k) + (0.30 × 8k)</code></td>
+                  <td class="text-right num-highlight">₱16,400</td>
+                </tr>
+                <tr>
+                  <td><strong>Option B: Major Promo</strong></td>
+                  <td class="text-right">₱35,000</td>
+                  <td class="text-right">₱2,000</td>
+                  <td class="text-right"><code>(0.70 × 35k) + (0.30 × 2k)</code></td>
+                  <td class="text-right num-highlight" style="color: var(--primary);">₱25,100</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p><strong>Result:</strong> Option B provides an EMV advantage of <strong>₱8,700</strong> (<code>₱25,100 − ₱16,400</code>). However, because Option B only earns ₱2,000 in low demand, the decision-maker must weigh risk tolerance.</p>
+
+          <!-- Interactive EMV Tool -->
+          <div class="interactive-tool">
+            <div class="tool-header">
+              <span>📊 Interactive Two-State EMV Simulator</span>
+            </div>
+            <div class="tool-grid">
+              <div class="input-group">
+                <label for="calcEmvProb">High Demand Prob (0 to 1):</label>
+                <input type="number" id="calcEmvProb" value="0.70" step="0.05" min="0" max="1">
+              </div>
+              <div class="input-group">
+                <label for="calcEmvHighVal">High State Profit (₱):</label>
+                <input type="number" id="calcEmvHighVal" value="35000" step="1000">
+              </div>
+              <div class="input-group">
+                <label for="calcEmvLowVal">Low State Profit (₱):</label>
+                <input type="number" id="calcEmvLowVal" value="2000" step="500">
+              </div>
+            </div>
+            <div class="tool-output" id="calcEmvOutput">
+              Loading EMV...
+            </div>
+          </div>
+
+          <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 2rem 0;">
+
+          <h3>6.4 Worked Example 3: Expected Number of Customers</h3>
+          <p>Expected values apply to non-monetary quantities as well:</p>
+
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Daily Customers (x)</th>
+                  <th class="text-right">Probability P(x)</th>
+                  <th class="text-right">Weighted Product [x · P(x)]</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>5</td><td class="text-right">0.20</td><td class="text-right num-highlight">1.0</td></tr>
+                <tr><td>10</td><td class="text-right">0.50</td><td class="text-right num-highlight">5.0</td></tr>
+                <tr><td>15</td><td class="text-right">0.30</td><td class="text-right num-highlight">4.5</td></tr>
+                <tr style="background-color: var(--bg-subtle); font-weight: bold;">
+                  <td colspan="2">Expected Daily Customers</td>
+                  <td class="text-right num-highlight" style="color: var(--primary);">10.5 customers</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p><em>Meaning: Over many business days, the expected long-run average is approximately 10.5 customers per day.</em></p>
+        </section>
+
+        <!-- PART 7 -->
+        <section class="section-card" id="part7">
+          <span class="section-badge">Part 7</span>
+          <h2>PROBABILITY DISTRIBUTIONS</h2>
+
+          <h3>7.1 What is a Probability Distribution?</h3>
+          <p>A probability distribution is a table or mathematical rule showing <strong>all mutually exclusive outcomes</strong> and their associated probabilities.</p>
+
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Number of Laptops for Repair</th>
+                  <th class="text-right">Probability</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>2</td><td class="text-right">0.20 (20%)</td></tr>
+                <tr><td>4</td><td class="text-right">0.50 (50%)</td></tr>
+                <tr><td>6</td><td class="text-right">0.30 (30%)</td></tr>
+                <tr style="background-color: var(--bg-subtle); font-weight: bold;">
+                  <td>Sum of All Probabilities (ΣP)</td>
+                  <td class="text-right" style="color: var(--primary);">1.00 (100%)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="callout callout-tip">
+            <span class="callout-icon">⭐</span>
+            <div class="callout-body">
+              <strong>Fundamental Validity Rule:</strong><br>
+              The sum of all individual probabilities in a complete discrete probability distribution <strong>must strictly equal 1.00 (or 100%)</strong>.
+            </div>
+          </div>
+
+          <h4>What If the Total Is Not 100%?</h4>
+          <p>If probabilities sum to <code>0.20 + 0.50 + 0.20 = 0.90 (90%)</code>, there is an unaccounted 10% probability gap. The distribution is incomplete and must be verified before making critical business decisions.</p>
+        </section>
+
+        <!-- PART 8 -->
+        <section class="section-card" id="part8">
+          <span class="section-badge">Part 8</span>
+          <h2>DETERMINISTIC VS. PROBABILISTIC APPROACHES</h2>
+          <p>Let's contrast both approaches side-by-side using the same school laboratory context (30 computers):</p>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; margin: 1.5rem 0;">
+            <div style="background-color: var(--bg-subtle); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.25rem;">
+              <h4 style="margin-top: 0; color: var(--primary);">Situation A: Deterministic</h4>
+              <p>Every computer receives scheduled maintenance at a known fixed fee of ₱500 per unit.</p>
+              <div class="calculation-box" style="margin-bottom: 0;">
+                <p><code>30 computers × ₱500 = ₱15,000</code></p>
+                <div class="calc-result" style="font-size: 0.95rem;">Total Known Cost: ₱15,000</div>
+              </div>
+            </div>
+
+            <div style="background-color: var(--bg-subtle); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.25rem;">
+              <h4 style="margin-top: 0; color: var(--accent);">Situation B: Probabilistic</h4>
+              <p>Maintenance is demand-based and uncertain:</p>
+              <ul style="font-size: 0.85rem;">
+                <li>5 units: 20% (<code>1.0</code>)</li>
+                <li>10 units: 50% (<code>5.0</code>)</li>
+                <li>15 units: 30% (<code>4.5</code>)</li>
+              </ul>
+              <div class="calculation-box" style="margin-bottom: 0;">
+                <p>Expected units = <code>10.5</code><br>
+                <code>10.5 × ₱500 = ₱5,250</code></p>
+                <div class="calc-result" style="font-size: 0.95rem; color: var(--accent);">Expected Cost: ₱5,250</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Dimension</th>
+                  <th>Deterministic Approach</th>
+                  <th>Probabilistic Approach</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Core Assumption</strong></td>
+                  <td>The quantity/value is known and fixed</td>
+                  <td>The quantity is uncertain; modeled with probabilities</td>
+                </tr>
+                <tr>
+                  <td><strong>Calculation Nature</strong></td>
+                  <td>Direct multiplication / algebra</td>
+                  <td>Weighted probability expectations (EMV)</td>
+                </tr>
+                <tr>
+                  <td><strong>Output Result</strong></td>
+                  <td>Fixed known amount (e.g. ₱15,000)</td>
+                  <td>Expected statistical amount (e.g. ₱5,250)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="callout callout-teacher">
+            <span class="callout-icon">💡</span>
+            <div class="callout-body">
+              <strong>Quick Memory Aid:</strong><br>
+              <strong>Deterministic:</strong> <em>"I know the numbers with certainty, so I calculate the exact answer."</em><br>
+              <strong>Probabilistic:</strong> <em>"I don't know exactly what will happen, so I use likelihoods to estimate expected outcomes."</em>
+            </div>
+          </div>
+        </section>
+
+        <!-- PART 9 -->
+        <section class="section-card" id="part9">
+          <span class="section-badge">Part 9</span>
+          <h2>QUANTITATIVE PROBLEM-SOLVING FRAMEWORKS</h2>
+
+          <h3>9.1 What is a Problem-Solving Framework?</h3>
+          <p>A problem-solving framework is a disciplined, step-by-step roadmap that guides decision-makers from problem identification to sustained implementation.</p>
+          
+          <div class="workflow-chain">
+            <span class="workflow-node">1. Problem</span>
+            <span class="workflow-arrow">→</span>
+            <span class="workflow-node">2. Objective</span>
+            <span class="workflow-arrow">→</span>
+            <span class="workflow-node">3. Data</span>
+            <span class="workflow-arrow">→</span>
+            <span class="workflow-node">4. Model</span>
+            <span class="workflow-arrow">→</span>
+            <span class="workflow-node">5. Solution</span>
+            <span class="workflow-arrow">→</span>
+            <span class="workflow-node">6. Evaluation</span>
+            <span class="workflow-arrow">→</span>
+            <span class="workflow-node">7. Implementation</span>
+          </div>
+
+          <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 2rem 0;">
+
+          <h3>9.2 The Seven Steps in Detail</h3>
+          
+          <div style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1rem;">
+            <div style="padding: 1rem; border: 1px solid var(--border-color); border-radius: var(--radius-md);">
+              <strong>Step 1: Define the Problem</strong>
+              <p style="margin: 0.35rem 0 0 0; font-size: 0.925rem;">Clearly specify the issue. <em>Example:</em> "The computer lab has slow internet and suffers network congestion."</p>
+            </div>
+            <div style="padding: 1rem; border: 1px solid var(--border-color); border-radius: var(--radius-md);">
+              <strong>Step 2: Identify the Objective</strong>
+              <p style="margin: 0.35rem 0 0 0; font-size: 0.925rem;">Define the measurable desired end-state. <em>Example:</em> "Ensure smooth student access to online educational resources without lag."</p>
+            </div>
+            <div style="padding: 1rem; border: 1px solid var(--border-color); border-radius: var(--radius-md);">
+              <strong>Step 3: Collect Relevant Data</strong>
+              <p style="margin: 0.35rem 0 0 0; font-size: 0.925rem;">Gather empirical figures (40 computers, 5 Mbps/computer, 100 Mbps current bandwidth, 200 Mbps proposed).</p>
+            </div>
+            <div style="padding: 1rem; border: 1px solid var(--border-color); border-radius: var(--radius-md);">
+              <strong>Step 4: Formulate a Mathematical Model</strong>
+              <p style="margin: 0.35rem 0 0 0; font-size: 0.925rem;">Construct the formula: <code>Required Bandwidth = Number of Computers × Bandwidth per Unit = 40 × 5 = 200 Mbps</code>.</p>
+            </div>
+            <div style="padding: 1rem; border: 1px solid var(--border-color); border-radius: var(--radius-md);">
+              <strong>Step 5: Solve the Model</strong>
+              <p style="margin: 0.35rem 0 0 0; font-size: 0.925rem;">Perform the calculation: <code>Deficit = 200 Mbps − 100 Mbps = 100 Mbps additional capacity needed</code>.</p>
+            </div>
+            <div style="padding: 1rem; border: 1px solid var(--border-color); border-radius: var(--radius-md);">
+              <strong>Step 6: Evaluate and Validate the Result</strong>
+              <p style="margin: 0.35rem 0 0 0; font-size: 0.925rem;">Critique assumptions: Do all 40 computers stream high bandwidth simultaneously? Monitor actual traffic before spending funds.</p>
+            </div>
+            <div style="padding: 1rem; border: 1px solid var(--border-color); border-radius: var(--radius-md);">
+              <strong>Step 7: Implement and Monitor</strong>
+              <p style="margin: 0.35rem 0 0 0; font-size: 0.925rem;">Execute the chosen upgrade and continually observe network metrics, latency, and student feedback.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- PART 10 -->
+        <section class="section-card" id="part10">
+          <span class="section-badge">Part 10</span>
+          <h2>DECISION-MAKING USING WEIGHTED SCORING</h2>
+          <p>When multiple competing criteria (e.g. price, performance, durability) matter, the <strong>Weighted Scoring Model</strong> enables objective evaluation.</p>
+
+          <div class="formula-block">
+            Weighted Score = Σ (Weight × Criterion Rating)
+          </div>
+
+          <h3>Example: Selecting a Programming Laptop</h3>
+          <p>You evaluate 3 laptops across 3 criteria with ratings from <strong>1 (Very Poor)</strong> to <strong>5 (Excellent)</strong>:</p>
+
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Evaluation Criteria</th>
+                  <th class="text-right">Assigned Weight</th>
+                  <th class="text-right">Laptop A</th>
+                  <th class="text-right">Laptop B</th>
+                  <th class="text-right">Laptop C</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Price (Affordability)</td>
+                  <td class="text-right">0.40 (40%)</td>
+                  <td class="text-right">5</td>
+                  <td class="text-right">3</td>
+                  <td class="text-right">4</td>
+                </tr>
+                <tr>
+                  <td>Performance</td>
+                  <td class="text-right">0.40 (40%)</td>
+                  <td class="text-right">3</td>
+                  <td class="text-right">5</td>
+                  <td class="text-right">4</td>
+                </tr>
+                <tr>
+                  <td>Battery Life</td>
+                  <td class="text-right">0.20 (20%)</td>
+                  <td class="text-right">4</td>
+                  <td class="text-right">3</td>
+                  <td class="text-right">5</td>
+                </tr>
+                <tr style="background-color: var(--bg-subtle); font-weight: bold;">
+                  <td>Weight Sum & Total Scores</td>
+                  <td class="text-right">1.00 (100%)</td>
+                  <td class="text-right num-highlight">4.00</td>
+                  <td class="text-right num-highlight">3.80</td>
+                  <td class="text-right num-highlight" style="color: var(--primary);">4.20</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="calculation-box">
+            <div class="calculation-title">Calculation Breakdown</div>
+            <div class="calc-step"><span class="calc-step-num">A:</span> <span><code>(0.40 × 5) + (0.40 × 3) + (0.20 × 4) = 2.00 + 1.20 + 0.80 = 4.00</code></span></div>
+            <div class="calc-step"><span class="calc-step-num">B:</span> <span><code>(0.40 × 3) + (0.40 × 5) + (0.20 × 3) = 1.20 + 2.00 + 0.60 = 3.80</code></span></div>
+            <div class="calc-step"><span class="calc-step-num">C:</span> <span><code>(0.40 × 4) + (0.40 × 4) + (0.20 × 5) = 1.60 + 1.60 + 1.00 = 4.20</code></span></div>
+            <div class="calc-result">Winner: Laptop C achieves the highest weighted score (4.20).</div>
+          </div>
+        </section>
+
+        <!-- PART 11 -->
+        <section class="section-card" id="part11">
+          <span class="section-badge">Part 11</span>
+          <h2>GUIDED PRACTICE – SOLVE WITH THE TEACHER</h2>
+          <p>Try calculating each problem before clicking to reveal the teacher's complete guided solution.</p>
+
+          <!-- Problem 1 -->
+          <div style="margin-bottom: 1.5rem;">
+            <h4>Problem 1: Computer Purchase</h4>
+            <p>A school wants to purchase 8 computers. Each computer costs ₱28,000. What is the total amount required?</p>
+            <details class="solution-accordion">
+              <summary>Show Solution for Problem 1</summary>
+              <div class="solution-content">
+                <p><strong>Formula:</strong> <code>Total Cost = Quantity × Price</code></p>
+                <p><code>8 × ₱28,000 = ₱224,000</code></p>
+                <p style="margin: 0; font-weight: bold; color: var(--primary);">Total Required = ₱224,000</p>
+              </div>
+            </details>
+          </div>
+
+          <!-- Problem 2 -->
+          <div style="margin-bottom: 1.5rem;">
+            <h4>Problem 2: Remaining Budget</h4>
+            <p>A school has ₱300,000 and purchases computers worth ₱224,000. How much money remains?</p>
+            <details class="solution-accordion">
+              <summary>Show Solution for Problem 2</summary>
+              <div class="solution-content">
+                <p><strong>Formula:</strong> <code>Remaining Budget = Total Budget − Total Expenses</code></p>
+                <p><code>₱300,000 − ₱224,000 = ₱76,000</code></p>
+                <p style="margin: 0; font-weight: bold; color: var(--primary);">Remaining Balance = ₱76,000</p>
+              </div>
+            </details>
+          </div>
+
+          <!-- Problem 3 -->
+          <div style="margin-bottom: 1.5rem;">
+            <h4>Problem 3: Percentage of Passing Students</h4>
+            <p>There are 50 students in a class. Forty students passed. What percentage passed?</p>
+            <details class="solution-accordion">
+              <summary>Show Solution for Problem 3</summary>
+              <div class="solution-content">
+                <p><strong>Formula:</strong> <code>Percentage = (Passed ÷ Total) × 100</code></p>
+                <p><code>(40 ÷ 50) × 100 = 0.80 × 100 = 80%</code></p>
+                <p style="margin: 0; font-weight: bold; color: var(--primary);">Passing Rate = 80%</p>
+              </div>
+            </details>
+          </div>
+
+          <!-- Problem 4 -->
+          <div style="margin-bottom: 1.5rem;">
+            <h4>Problem 4: Probability of a Defective Mouse</h4>
+            <p>A box contains 20 computer mice. Five are defective. What is the probability of selecting a defective mouse?</p>
+            <details class="solution-accordion">
+              <summary>Show Solution for Problem 4</summary>
+              <div class="solution-content">
+                <p><strong>Formula:</strong> <code>Probability = Defective Mice ÷ Total Mice</code></p>
+                <p><code>5 ÷ 20 = 0.25 = 25%</code></p>
+                <p style="margin: 0; font-weight: bold; color: var(--primary);">Probability = 25%</p>
+              </div>
+            </details>
+          </div>
+
+          <!-- Problem 5 -->
+          <div style="margin-bottom: 1rem;">
+            <h4>Problem 5: Expected Monetary Value Comparison</h4>
+            <p>A business has two choices: Option A vs. Option B under 80% High Demand and 20% Low Demand:</p>
+            <ul>
+              <li>Option A: ₱20,000 (High) | ₱10,000 (Low)</li>
+              <li>Option B: ₱30,000 (High) | ₱5,000 (Low)</li>
+            </ul>
+            <details class="solution-accordion">
+              <summary>Show Solution for Problem 5</summary>
+              <div class="solution-content">
+                <p><strong>Option A EMV:</strong> <code>(0.80 × ₱20,000) + (0.20 × ₱10,000) = ₱16,000 + ₱2,000 = ₱18,000</code></p>
+                <p><strong>Option B EMV:</strong> <code>(0.80 × ₱30,000) + (0.20 × ₱5,000) = ₱24,000 + ₱1,000 = ₱25,000</code></p>
+                <p><strong>Comparison:</strong> <code>₱25,000 − ₱18,000 = ₱7,000</code></p>
+                <p style="margin: 0; font-weight: bold; color: var(--primary);">Option B has the higher EMV by ₱7,000.</p>
+              </div>
+            </details>
+          </div>
+        </section>
+
+        <!-- PART 12 -->
+        <section class="section-card" id="part12">
+          <span class="section-badge">Part 12</span>
+          <h2>STUDENT CLASSROOM ACTIVITY</h2>
+          <div style="background-color: var(--primary-light); border: 1px solid var(--primary-border); padding: 1.25rem; border-radius: var(--radius-md); margin-bottom: 1.5rem;">
+            <h3 style="margin-top: 0; color: var(--primary);">Activity 1: The School IT Decision Challenge</h3>
+            <p style="margin: 0;"><strong>Grouping:</strong> 3–5 students per group | <strong>Time Allotment:</strong> 25–30 minutes</p>
+          </div>
+
+          <h4>Scenario</h4>
+          <p>Your school wants to improve its computer laboratory. The school has a strict budget ceiling of <strong>₱100,000</strong>. There are three available options:</p>
+
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Option</th>
+                  <th>Description</th>
+                  <th class="text-right">Cost</th>
+                  <th class="text-right">Benefit Score (1–10)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Option A</strong></td>
+                  <td>Upgrade Computer RAM</td>
+                  <td class="text-right num-highlight">₱30,000</td>
+                  <td class="text-right">7</td>
+                </tr>
+                <tr>
+                  <td><strong>Option B</strong></td>
+                  <td>Upgrade Computer Storage</td>
+                  <td class="text-right num-highlight">₱25,000</td>
+                  <td class="text-right">6</td>
+                </tr>
+                <tr>
+                  <td><strong>Option C</strong></td>
+                  <td>Replace Old Computers</td>
+                  <td class="text-right num-highlight">₱100,000</td>
+                  <td class="text-right">10</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h4>Questions for Group Analysis</h4>
+          <ol>
+            <li>What is the problem of the school?</li>
+            <li>What is the main objective?</li>
+            <li>What is the available budget?</li>
+            <li>Which options are within the available budget?</li>
+            <li>Which option has the highest benefit score?</li>
+            <li>Which option would your group recommend?</li>
+            <li>Why did you select that option?</li>
+          </ol>
+
+          <details class="solution-accordion" style="margin-top: 1.25rem;">
+            <summary>Expected Discussion & Teacher Guide</summary>
+            <div class="solution-content">
+              <ul>
+                <li><strong>1. Problem:</strong> The school computer lab performance is inadequate for current coursework.</li>
+                <li><strong>2. Objective:</strong> Maximize computer lab improvement within the available budget constraint.</li>
+                <li><strong>3. Budget:</strong> ₱100,000.</li>
+                <li><strong>4. Viable options:</strong> All three are within the ₱100,000 ceiling.</li>
+                <li><strong>5. Highest benefit:</strong> Option C has a score of 10.</li>
+                <li><strong>6 & 7. Trade-off insight:</strong> Option C consumes 100% of the funds. Combining Option A + B costs <code>₱30k + ₱25k = ₱55,000</code>, leaving ₱45,000 reserve for other urgent maintenance needs. Groups should defend their priority choice logically.</li>
+              </ul>
+            </div>
+          </details>
+
+          <div style="background-color: var(--bg-subtle); padding: 1.25rem; border-radius: var(--radius-md); margin-top: 1.25rem;">
+            <h4 style="margin-top: 0;">Group Output Requirements</h4>
+            <p style="margin-bottom: 0;">Each group must submit a short report outlining: Problem definition, Objective, Budget constraint, Matrix comparison, Final recommended decision, and Justification.</p>
+          </div>
+        </section>
+
+        <!-- PART 13 -->
+        <section class="section-card" id="part13">
+          <span class="section-badge">Part 13</span>
+          <h2>INDIVIDUAL ASSESSMENT</h2>
+          <p>Test your understanding. Complete the multiple choice questions interactively and solve the mathematical and conceptual problems.</p>
+
+          <div class="quiz-score-banner">
+            <div>
+              <h4 style="margin: 0; color: var(--primary);">Part A: Multiple Choice Interactive Quiz</h4>
+              <p style="margin: 0.2rem 0 0 0; font-size: 0.875rem;" id="quizScoreDisplay">Select answers and click <strong>Check Answers</strong>.</p>
+            </div>
+            <div style="display: flex; gap: 0.5rem;">
+              <button class="btn-primary" id="btnCheckQuiz">Check Answers</button>
+              <button class="btn-secondary" id="btnResetQuiz">Reset</button>
+            </div>
+          </div>
+
+          <!-- Question 1 -->
+          <div class="quiz-card" data-qid="q1">
+            <div class="quiz-question"><span class="quiz-number">1.</span> What does quantitative analysis use to help solve problems?</div>
+            <div class="quiz-options">
+              <div class="quiz-option" data-value="A">A. Personal opinions only</div>
+              <div class="quiz-option" data-value="B">B. Numbers, data, and mathematical methods</div>
+              <div class="quiz-option" data-value="C">C. Random guesses</div>
+              <div class="quiz-option" data-value="D">D. Emotions only</div>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <!-- Question 2 -->
+          <div class="quiz-card" data-qid="q2">
+            <div class="quiz-question"><span class="quiz-number">2.</span> Which component of a decision-making model represents what we can control?</div>
+            <div class="quiz-options">
+              <div class="quiz-option" data-value="A">A. Parameter</div>
+              <div class="quiz-option" data-value="B">B. Constraint</div>
+              <div class="quiz-option" data-value="C">C. Decision Variable</div>
+              <div class="quiz-option" data-value="D">D. Probability</div>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <!-- Question 3 -->
+          <div class="quiz-card" data-qid="q3">
+            <div class="quiz-question"><span class="quiz-number">3.</span> What is a constraint?</div>
+            <div class="quiz-options">
+              <div class="quiz-option" data-value="A">A. A desired result</div>
+              <div class="quiz-option" data-value="B">B. A limitation or restriction</div>
+              <div class="quiz-option" data-value="C">C. A random outcome</div>
+              <div class="quiz-option" data-value="D">D. A mathematical answer</div>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <!-- Question 4 -->
+          <div class="quiz-card" data-qid="q4">
+            <div class="quiz-question"><span class="quiz-number">4.</span> Which approach uses known and fixed input values?</div>
+            <div class="quiz-options">
+              <div class="quiz-option" data-value="A">A. Probabilistic</div>
+              <div class="quiz-option" data-value="B">B. Deterministic</div>
+              <div class="quiz-option" data-value="C">C. Uncertain</div>
+              <div class="quiz-option" data-value="D">D. Random</div>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <!-- Question 5 -->
+          <div class="quiz-card" data-qid="q5">
+            <div class="quiz-question"><span class="quiz-number">5.</span> Which approach uses probabilities?</div>
+            <div class="quiz-options">
+              <div class="quiz-option" data-value="A">A. Deterministic</div>
+              <div class="quiz-option" data-value="B">B. Probabilistic</div>
+              <div class="quiz-option" data-value="C">C. Fixed-cost approach</div>
+              <div class="quiz-option" data-value="D">D. Basic multiplication</div>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <!-- Question 6 -->
+          <div class="quiz-card" data-qid="q6">
+            <div class="quiz-question"><span class="quiz-number">6.</span> What is the probability of an impossible event?</div>
+            <div class="quiz-options">
+              <div class="quiz-option" data-value="A">A. 100%</div>
+              <div class="quiz-option" data-value="B">B. 75%</div>
+              <div class="quiz-option" data-value="C">C. 50%</div>
+              <div class="quiz-option" data-value="D">D. 0%</div>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <!-- Question 7 -->
+          <div class="quiz-card" data-qid="q7">
+            <div class="quiz-question"><span class="quiz-number">7.</span> What does EMV mean?</div>
+            <div class="quiz-options">
+              <div class="quiz-option" data-value="A">A. Expected Monetary Value</div>
+              <div class="quiz-option" data-value="B">B. Estimated Market Variable</div>
+              <div class="quiz-option" data-value="C">C. Economic Management Value</div>
+              <div class="quiz-option" data-value="D">D. Equal Money Volume</div>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <!-- Question 8 -->
+          <div class="quiz-card" data-qid="q8">
+            <div class="quiz-question"><span class="quiz-number">8.</span> If a decision-maker knows the possible outcomes and their probabilities, what decision condition is involved?</div>
+            <div class="quiz-options">
+              <div class="quiz-option" data-value="A">A. Certainty</div>
+              <div class="quiz-option" data-value="B">B. Risk</div>
+              <div class="quiz-option" data-value="C">C. Uncertainty</div>
+              <div class="quiz-option" data-value="D">D. Unknown</div>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <!-- Question 9 -->
+          <div class="quiz-card" data-qid="q9">
+            <div class="quiz-question"><span class="quiz-number">9.</span> Which problem-solving step involves collecting information?</div>
+            <div class="quiz-options">
+              <div class="quiz-option" data-value="A">A. Define the Problem</div>
+              <div class="quiz-option" data-value="B">B. Collect Data</div>
+              <div class="quiz-option" data-value="C">C. Implement the Decision</div>
+              <div class="quiz-option" data-value="D">D. Evaluate the Result</div>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <!-- Question 10 -->
+          <div class="quiz-card" data-qid="q10">
+            <div class="quiz-question"><span class="quiz-number">10.</span> What is the primary purpose of evaluating and validating a result?</div>
+            <div class="quiz-options">
+              <div class="quiz-option" data-value="A">A. To ignore the collected data</div>
+              <div class="quiz-option" data-value="B">B. To check whether the model and results are reasonable</div>
+              <div class="quiz-option" data-value="C">C. To increase the number of alternatives</div>
+              <div class="quiz-option" data-value="D">D. To avoid calculations</div>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 2.5rem 0;">
+
+          <!-- Part B -->
+          <h3>PART B – MATHEMATICAL PROBLEMS</h3>
+          <p><em>Instructions: Solve each problem thoroughly on your paper or scratchpad, then reveal the solution to self-check.</em></p>
+
+          <div style="display: flex; flex-direction: column; gap: 1.25rem; margin-top: 1rem;">
+            <div style="background-color: var(--bg-subtle); padding: 1.15rem; border-radius: var(--radius-md);">
+              <strong>11. Total Cost:</strong> A computer laboratory purchases 15 keyboards. Each keyboard costs ₱350. Calculate the total cost.
+              <details class="solution-accordion" style="margin-top: 0.5rem;">
+                <summary>Reveal Answer & Working</summary>
+                <div class="solution-content">
+                  <p><code>Total Cost = 15 × ₱350 = ₱5,250</code></p>
+                </div>
+              </details>
+            </div>
+
+            <div style="background-color: var(--bg-subtle); padding: 1.15rem; border-radius: var(--radius-md);">
+              <strong>12. Remaining Budget:</strong> A school has a budget of ₱80,000. It spends ₱55,000 on computer equipment. Calculate the remaining budget.
+              <details class="solution-accordion" style="margin-top: 0.5rem;">
+                <summary>Reveal Answer & Working</summary>
+                <div class="solution-content">
+                  <p><code>Remaining Budget = ₱80,000 − ₱55,000 = ₱25,000</code></p>
+                </div>
+              </details>
+            </div>
+
+            <div style="background-color: var(--bg-subtle); padding: 1.15rem; border-radius: var(--radius-md);">
+              <strong>13. Percentage:</strong> There are 60 students in a class. Forty-five students passed the examination. Calculate the percentage of students who passed.
+              <details class="solution-accordion" style="margin-top: 0.5rem;">
+                <summary>Reveal Answer & Working</summary>
+                <div class="solution-content">
+                  <p><code>(45 ÷ 60) × 100 = 0.75 × 100 = 75%</code></p>
+                </div>
+              </details>
+            </div>
+
+            <div style="background-color: var(--bg-subtle); padding: 1.15rem; border-radius: var(--radius-md);">
+              <strong>14. Probability:</strong> A box contains 30 computer components (12 defective, 18 working). Calculate:
+              <br>a. Probability of selecting a defective component.
+              <br>b. Probability of selecting a working component.
+              <details class="solution-accordion" style="margin-top: 0.5rem;">
+                <summary>Reveal Answer & Working</summary>
+                <div class="solution-content">
+                  <p><strong>a. Defective:</strong> <code>12 ÷ 30 = 0.40 = 40%</code></p>
+                  <p><strong>b. Working:</strong> <code>18 ÷ 30 = 0.60 = 60%</code></p>
+                  <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Check: 40% + 60% = 100%</p>
+                </div>
+              </details>
+            </div>
+
+            <div style="background-color: var(--bg-subtle); padding: 1.15rem; border-radius: var(--radius-md);">
+              <strong>15. Expected Monetary Value:</strong> Compare two business decisions under High Demand (60%) and Low Demand (40%):
+              <ul>
+                <li>Option A: ₱25,000 (High) | ₱15,000 (Low)</li>
+                <li>Option B: ₱40,000 (High) | ₱5,000 (Low)</li>
+              </ul>
+              Calculate the EMV of both and determine which decision has higher expected monetary value.
+              <details class="solution-accordion" style="margin-top: 0.5rem;">
+                <summary>Reveal Answer & Working</summary>
+                <div class="solution-content">
+                  <p><strong>Option A:</strong> <code>(0.60 × ₱25,000) + (0.40 × ₱15,000) = ₱15,000 + ₱6,000 = ₱21,000</code></p>
+                  <p><strong>Option B:</strong> <code>(0.60 × ₱40,000) + (0.40 × ₱5,000) = ₱24,000 + ₱2,000 = ₱26,000</code></p>
+                  <p style="margin: 0; font-weight: bold; color: var(--primary);">Option B has the higher EMV by ₱5,000 (₱26,000 vs. ₱21,000).</p>
+                </div>
+              </details>
+            </div>
+          </div>
+
+          <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 2.5rem 0;">
+
+          <!-- Part C -->
+          <h3>PART C – SHORT ANSWER QUESTIONS</h3>
+          <ol start="16" style="padding-left: 1.5rem; display: flex; flex-direction: column; gap: 0.85rem;">
+            <li>Explain quantitative analysis using your own words.</li>
+            <li>Differentiate deterministic and probabilistic approaches.</li>
+            <li>What is the importance of a decision-making model?</li>
+            <li>Give one real-life example of a deterministic situation.</li>
+            <li>Give one real-life example of a probabilistic situation.</li>
+          </ol>
+        </section>
+
+        <!-- PART 14 -->
+        <section class="section-card" id="part14">
+          <span class="section-badge">Part 14</span>
+          <h2>COMPLETE ANSWER KEY & EXPLANATIONS</h2>
+          <p>Reference guide for teachers and self-evaluating students.</p>
+
+          <details class="solution-accordion" open>
+            <summary>Part A: Multiple Choice Answer Key</summary>
+            <div class="solution-content">
+              <div class="table-container" style="margin-top: 0;">
+                <table>
+                  <thead>
+                    <tr><th>#</th><th>Answer</th><th>Concept Summary</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>1</td><td><strong>B</strong></td><td>Uses numbers, data, and mathematical calculations</td></tr>
+                    <tr><td>2</td><td><strong>C</strong></td><td>Decision variables represent choices within control</td></tr>
+                    <tr><td>3</td><td><strong>B</strong></td><td>A constraint represents a boundary, limit, or restriction</td></tr>
+                    <tr><td>4</td><td><strong>B</strong></td><td>Deterministic approaches operate on fixed, known inputs</td></tr>
+                    <tr><td>5</td><td><strong>B</strong></td><td>Probabilistic approaches model uncertainty via probabilities</td></tr>
+                    <tr><td>6</td><td><strong>D</strong></td><td>An impossible event has exactly 0% probability</td></tr>
+                    <tr><td>7</td><td><strong>A</strong></td><td>EMV stands for Expected Monetary Value</td></tr>
+                    <tr><td>8</td><td><strong>B</strong></td><td>Risk occurs when outcomes and probabilities are known</td></tr>
+                    <tr><td>9</td><td><strong>B</strong></td><td>Step 3 of framework is Collect Relevant Data</td></tr>
+                    <tr><td>10</td><td><strong>B</strong></td><td>Evaluation validates realism and sanity-checks assumptions</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </details>
+
+          <details class="solution-accordion">
+            <summary>Part B: Mathematical Problems Complete Solutions</summary>
+            <div class="solution-content">
+              <p><strong>11. Total Cost:</strong> <code>Quantity × Price = 15 × ₱350 = ₱5,250</code></p>
+              <p><strong>12. Remaining Budget:</strong> <code>₱80,000 − ₱55,000 = ₱25,000</code></p>
+              <p><strong>13. Percentage:</strong> <code>(45 ÷ 60) × 100 = 75%</code></p>
+              <p><strong>14. Probability:</strong> Defective: <code>12/30 = 40%</code>; Working: <code>18/30 = 60%</code></p>
+              <p><strong>15. EMV:</strong> Option A = ₱21,000; Option B = ₱26,000. <strong>Option B is higher by ₱5,000.</strong></p>
+            </div>
+          </details>
+
+          <details class="solution-accordion">
+            <summary>Part C: Conceptual Reference Answers</summary>
+            <div class="solution-content">
+              <p><strong>16. Definition:</strong> Quantitative analysis is the systematic process of applying numbers, data, and math to make sound decisions.</p>
+              <p><strong>17. Difference:</strong> Deterministic methods use known, fixed values yielding certain outcomes; probabilistic methods model likelihoods under uncertainty.</p>
+              <p><strong>18. Importance:</strong> A decision model abstracts complex real-world variables into structured equations to evaluate alternatives objectively.</p>
+              <p><strong>19. Deterministic Example:</strong> Calculating total hardware cost when quantities and per-unit prices are contractually set.</p>
+              <p><strong>20. Probabilistic Example:</strong> Estimating daily foot-traffic and customer repair demand in a newly opened IT service center.</p>
+            </div>
+          </details>
+        </section>
+
+        <!-- PART 15 -->
+        <section class="section-card" id="part15">
+          <span class="section-badge">Part 15</span>
+          <h2>ASSIGNMENT: PRACTICAL APPLICATION</h2>
+          
+          <div style="background-color: var(--bg-subtle); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.5rem; margin-bottom: 1.5rem;">
+            <h3 style="margin-top: 0; color: var(--primary);">Title: How Do We Use Numbers to Make Better Decisions?</h3>
+            <p><strong>Instructions:</strong> Choose one real-life problem requiring a decision from the list below:</p>
+            <ul style="margin-bottom: 1rem;">
+              <li>Buying a laptop for programming</li>
+              <li>Purchasing computers for a school laboratory</li>
+              <li>Selecting an internet subscription</li>
+              <li>Managing the inventory of a computer shop</li>
+              <li>Planning a small tech business</li>
+              <li>Selecting a software application for a school</li>
+            </ul>
+            <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);"><strong>Submission:</strong> 1–2 pages (typed or neatly written).</p>
+          </div>
+
+          <h4>Required Report Sections</h4>
+          <ol style="padding-left: 1.5rem; line-height: 1.8;">
+            <li>Describe the problem.</li>
+            <li>Identify the objective.</li>
+            <li>Present at least two possible alternatives.</li>
+            <li>Provide numerical data (cost, specs, or scores).</li>
+            <li>Identify the constraints.</li>
+            <li>Explain whether you used a deterministic or probabilistic approach.</li>
+            <li>Show at least one clear mathematical calculation.</li>
+            <li>Provide your recommended decision.</li>
+            <li>Explain why your decision is best supported by numbers.</li>
+          </ol>
+
+          <h4 style="margin-top: 2rem;">Grading Rubric (100 Points Total)</h4>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Evaluation Criteria</th>
+                  <th class="text-right">Max Points</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Problem Identification</td><td class="text-right num-highlight">10</td></tr>
+                <tr><td>Objective and Alternatives Formulation</td><td class="text-right num-highlight">15</td></tr>
+                <tr><td>Relevant Numerical Information & Parameters</td><td class="text-right num-highlight">15</td></tr>
+                <tr><td>Correct Approach Selection (Deterministic vs Probabilistic)</td><td class="text-right num-highlight">15</td></tr>
+                <tr><td>Mathematical Calculation Accuracy & Step-by-Step Rigor</td><td class="text-right num-highlight">20</td></tr>
+                <tr><td>Decision Justification & Critical Explanation</td><td class="text-right num-highlight">15</td></tr>
+                <tr><td>Organization, Structure, and Visual Presentation</td><td class="text-right num-highlight">10</td></tr>
+                <tr style="background-color: var(--bg-subtle); font-weight: bold;">
+                  <td>Total Available Score</td>
+                  <td class="text-right num-highlight" style="color: var(--primary);">100 pts</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- PART 16 -->
+        <section class="section-card" id="part16" style="border-top: 4px solid var(--primary);">
+          <span class="section-badge">Part 16</span>
+          <h2>FINAL LESSON SUMMARY</h2>
+          <p>Before concluding this module, ensure you master these five central pillars:</p>
+
+          <div style="display: grid; gap: 1rem; margin: 1.5rem 0;">
+            <div style="background-color: var(--bg-subtle); padding: 1rem 1.25rem; border-radius: var(--radius-md);">
+              <strong>1. Quantitative Analysis:</strong> Using numbers, data, and systematic calculation to understand problems and guide optimal choices.
+            </div>
+            <div style="background-color: var(--bg-subtle); padding: 1rem 1.25rem; border-radius: var(--radius-md);">
+              <strong>2. Four Model Components:</strong> Decision Variables (controllable choices), Parameters (given values), Constraints (limitations), and Objective Function (goals to maximize or minimize).
+            </div>
+            <div style="background-color: var(--bg-subtle); padding: 1rem 1.25rem; border-radius: var(--radius-md);">
+              <strong>3. Three Decision Conditions:</strong> Certainty (outcomes known), Risk (outcomes & probabilities known), and Uncertainty (probabilities unknown).
+            </div>
+            <div style="background-color: var(--bg-subtle); padding: 1rem 1.25rem; border-radius: var(--radius-md);">
+              <strong>4. Two Approaches:</strong> Deterministic (fixed, known inputs) vs. Probabilistic (likelihoods, distributions, and EMV under uncertainty).
+            </div>
+            <div style="background-color: var(--bg-subtle); padding: 1rem 1.25rem; border-radius: var(--radius-md);">
+              <strong>5. Seven-Step Framework:</strong> Problem → Objective → Data → Model → Solution → Evaluation → Implementation.
+            </div>
+          </div>
+
+          <div class="callout callout-teacher" style="padding: 1.75rem; margin-top: 2rem;">
+            <span class="callout-icon" style="font-size: 1.5rem;">🎓</span>
+            <div class="callout-body">
+              <h3 style="margin-top: 0; color: var(--primary); font-size: 1.2rem;">FINAL MESSAGE TO STUDENTS</h3>
+              <p style="font-size: 1.05rem; line-height: 1.75; margin-bottom: 0;">
+                "Class, remember that quantitative analysis is not just about solving mathematical problems. It is about learning how to make better decisions.
+              </p>
+              <p style="font-size: 1.05rem; line-height: 1.75; margin-top: 0.75rem; margin-bottom: 0;">
+                When you buy a laptop, manage a budget, select an internet plan, or troubleshoot a computer system, you are already dealing with decisions that can be supported by numbers.
+              </p>
+              <p style="font-size: 1.05rem; line-height: 1.75; margin-top: 0.75rem; margin-bottom: 0;">
+                You do not need to be a mathematics expert to begin using quantitative analysis. What matters is that you understand the problem, identify the information you need, choose the correct formula, and interpret the result.
+              </p>
+              <p style="font-size: 1.05rem; line-height: 1.75; margin-top: 0.75rem; margin-bottom: 0; font-weight: 600; color: var(--primary);">
+                Always remember: Do not just calculate the answer. Understand what the answer tells you and how it can help you make a better decision."
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Footer -->
+        <footer style="text-align: center; padding: 2rem 0; color: var(--text-muted); font-size: 0.875rem; border-top: 1px solid var(--border-color);">
+          <p style="margin-bottom: 0.25rem;">Module 1: Quantitative Analysis Fundamentals • Educational Web Resource</p>
+          <p style="margin-bottom: 0; font-size: 0.8rem; color: var(--text-faint);">Designed for college students & educators • Responsive & Minimalist Design</p>
+        </footer>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to Top" title="Back to top">↑</button>
+
+  <script src="app.js"></script>
+</body>
+</html>
